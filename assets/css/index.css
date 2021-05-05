@@ -1,0 +1,31 @@
+#login_image{
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 90vh;
+    object-fit: cover;
+    width: 100%;
+    object-position: bottom;
+}
+#reg_login_red{
+    float: right;background-color: black;color:white;margin-right: 3em
+}
+#login_box,#reg_box{
+    padding: 2em;padding-right: 3em
+}
+#login_buttton_style,#reg_buttton_style{
+    background-color: #e74c3c;color:white;width:100px
+}
+#red_to_reg_box,#red_to_login_box{
+    float:right;color:black
+}
+#right_side_login{
+    margin-top:2em
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .left_side_login {
+        display: none!important;
+    }
+}

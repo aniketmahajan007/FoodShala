@@ -1,0 +1,22 @@
+.green_dot {
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 6px;
+}
+.red_dot{
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 6px;
+}
+.food_item_img{
+    position: absolute;width: 100px;height: 90px;
+}
+.food_item_bold_header{
+    font-weight: 600
+}

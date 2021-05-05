@@ -1,0 +1,26 @@
+.item_outer_box{
+    border: 1px solid lightgray;padding: 0.4em;width: 620px;height: 110px
+}
+.item_inner_box{
+    margin-left:8em;margin-top: 4px;width: 400px
+}
+.res_price{
+    float: right;
+    margin-right: 0.4em;
+    margin-top: -2.4em;
+    font-size: 2em;
+    font-family: 'Pacifico', cursive;
+    border-left: 1px solid lightgray;
+}
+.item_description{
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+#add_food_button{
+    background-color: #e74c3c;
+    color:white;
+    width: 200px;
+}
