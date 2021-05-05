@@ -39,7 +39,7 @@
         <h1 style="font-size: 50px;">Contact Us :</h1>
         <br>
         <h3>Visit Us :</h3>
-        <address style="font-size: 1.1em">121/122 Sector -23<br>Gurgaon, Nirvana Country - 110087</address>
+        <address class="address_company">121/122 Sector -23<br>Gurgaon, Nirvana Country - 110087</address>
         <br>
         <h3>Say hello by phone :</h3>
         <a class="contact_part" href="tel:8912356423">+91 8912356423</a>
@@ -47,10 +47,29 @@
         <h3>Or by email :</h3>
         <a class="contact_part" href="mailto:foodshala@gmail.com">foodshala@gail.com</a>
     </div>
+    <div class="text-center" id="contact_us_box_mob" style="display: none">
+        <h1 style="font-size: 40px;">Contact Us :</h1>
+        <br>
+        <h3>Visit Us :</h3>
+        <address class="address_company">121/122 Sector -23<br>Gurgaon, Nirvana Country - 110087</address>
+        <br>
+        <h3>Say hello by phone :</h3>
+        <a class="contact_part" href="tel:8912356423">+91 8912356423</a>
+        <br><br><br>
+        <h3>Or by email :</h3>
+        <a class="contact_part" href="mailto:foodshala@gmail.com">foodshala@gail.com</a>
+        <br><br><br><br><br><br>
+    </div>
 </main>
 <style>
     #contact_us_main{
         background-color: rgba(0,0,0,0.67);height: 100vh
+    }
+    #contact_us_box_mob{
+        padding:0.4em;background-color: white;margin-top: 4em;
+    }
+    .address_company{
+        font-size: 1.1em;
     }
     #contact_us_box{
         position:absolute;padding:4em;background-color: white;height: 550px;margin-top: 4em;width: 800px;left: 25%
@@ -59,5 +78,14 @@
         font-size: 1.1em;color: black;
     }
 </style>
+<script>
+    $(document).ready(()=>{
+        if(screen.width<768){
+            $("#contact_us_box").hide();
+            $("#contact_us_box_mob").show();
+        }
+    });
+
+</script>
 </body>
 </html>

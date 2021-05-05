@@ -24,3 +24,21 @@
     color:white;
     width: 200px;
 }
+@media only screen and (max-width: 600px) {
+    .item_description{
+        width: 50%;
+    }
+    #some_space{
+        margin-top: 2em;
+    }
+    .res_price{
+       font-size: 1.8em;
+        margin-top: -0.5em;
+        border-top: 1px solid lightgray;
+        margin-right: 0px;
+    }
+    .item_outer_box{
+        width: 340px;
+        height: 130px;
+    }
+}
