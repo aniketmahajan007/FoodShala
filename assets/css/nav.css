@@ -83,3 +83,8 @@ ul{
 .marge_bottom{
     margin-bottom: 10em
 }
+@media only screen and (max-width: 600px) {
+    .container_line{
+        display: none;
+    }
+}

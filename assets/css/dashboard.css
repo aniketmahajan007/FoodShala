@@ -24,6 +24,21 @@
     color:white;
     width: 200px;
 }
+.res_price{
+    margin-top: -3.4em;
+    font-size: 1.6em;
+}
+.add_item_button{
+    font-size: 0.6em;
+    background-color: #e74c3c;
+    color: white;
+    margin-left: 20px;
+    font-family: auto;
+    width: 90px;
+}
+.menu_price_fix_style{
+    margin-left: 18px;
+}
 @media only screen and (max-width: 600px) {
     .item_description{
         width: 50%;

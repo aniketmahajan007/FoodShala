@@ -1,0 +1,41 @@
+.margin_top{
+    margin-top: 1.4em;
+}
+.order_res_name{
+    font-family: 'Pacifico', cursive;
+}
+.order_number_detail{
+    font-weight: 600;
+}
+.bold_it{
+    font-weight: 600
+}
+.order_item_shift_left{
+    margin-left: 4em
+}
+.order_number,.order_number_items{
+    font-size: 1.1em;
+}
+.order_number_items{
+    position: absolute;
+}
+.order_res_detail{
+    font-size: 0.9em;
+}
+.order_inner_box{
+    margin-left: 4em
+}
+.order_outer_box{
+    padding: 1em;border: 1px solid lightgray;width: 340px
+}
+.order_img_logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    position: absolute;
+}
+.order_res_name,.order_res_detail{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
