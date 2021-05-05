@@ -1,0 +1,59 @@
+.food_menu_res_detail{
+    margin-left: 4em;
+}
+.food_menu_item_name,.food_menu_item_desc,.food_menu_restaurant_name,.food_menu_restaurant_detail{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.food_menu_restaurant_name{
+    font-family: 'Pacifico', cursive;
+}
+.food_menu_restaurant_detail{
+    font-size: 0.9em;
+}
+.food_menu_company_box{
+    padding: 0 1em 0 1em;
+}
+.food_menu_logo_food{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    position: absolute;
+}
+.food_menu_outer_box{
+    width: 362px;
+    border: 1px solid lightgray;
+}
+.food_menu_inner_box{
+    padding: 0.6em 1em 0px 1em;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 1em;
+}
+.food_menu_img_food{
+    width: 360px;
+    height: 215px;
+    object-fit: cover;
+}
+.food_menu_item_name{
+    font-size: 24px;
+    font-weight: 500;
+}
+.food_menu_item_desc{
+    color: gray;
+    margin-top: -6px;
+    font-size: 0.9em;
+}
+.food_menu_price{
+    font-weight: 600;
+}
+.food_menu_order_button{
+    color: white;
+    float: right;
+    margin-top: -3em;
+    background-color: #e74c3c;
+    margin-right: 1em;
+}
+#show_more_food{
+    width: 400px;background-color: #e74c3c;color:white
+}

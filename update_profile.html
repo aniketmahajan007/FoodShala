@@ -9,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-  <script src="../assets/js/jquery.js"></script>
-  <link href="../assets/css/nav.css" rel="stylesheet">
+  <script src="./assets/js/jquery.js"></script>
+  <link href="./assets/css/nav.css" rel="stylesheet">
 </head>
 <body>
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">Food <span class="shala_white">Shala</span></a>
@@ -22,10 +23,10 @@
     <div class=" justify-content-end collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="dashboard.html">DashBoard</a>
+          <a class="nav-link active" aria-current="page" href="#">Your Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Orders History</a>
+          <a class="nav-link active" aria-current="page" href="dashboard.html">Choose Restaurant</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Sign Out</a>
@@ -52,25 +53,27 @@
   <br>
   <h2 class="pacifo">Update Profile :</h2>
   <br>
+  <!-- Update Profile Form -->
   <div class="row">
     <div class="col-lg-6">
-      <label>Enter Restaurant Name:</label>
+      <label>Enter Name:</label>
       <br>
-      <input type="text" class="form-control" placeholder="Enter Restaurant Name">
-      <br>
-      <label>Tell us about your Restaurant</label>
-      <br>
-      <input type="text" class="form-control" placeholder="Enter Restaurant Description">
+      <input type="text" class="form-control" placeholder="Enter Name">
       <br>
       <label>Enter Address</label>
       <input type="text" class="form-control" placeholder="Enter Address">
       <br>
+      <label>Food Preference</label>
+      <select class="form-control">
+        <option value="1">Non-Veg</option>
+        <option value="2">Veg</option>
+        <option value="0">Both</option>
+      </select>
+      <br>
       <label>Contact Number</label>
       <input type="text" class="form-control" placeholder="Enter contact number">
       <br>
-      <label>Add Restaurant Logo</label><br>
-      <input type="file" accept="image/*">
-      <br><br>
+
       <div class="text-center">
         <button type="button" class="btn" id="update_profile_button">Update Profile</button>
       </div>

@@ -74,3 +74,12 @@ ul{
 .container_line{
     padding: 1em;border-bottom: 1px solid lightgray
 }
+.text_black{
+    color:black
+}
+.theme_color{
+    color:#e74c3c
+}
+.marge_bottom{
+    margin-bottom: 10em
+}
