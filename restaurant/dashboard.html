@@ -12,8 +12,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <script src="../assets/js/jquery.js"></script>
   <link href="../assets/css/nav.css" rel="stylesheet">
+  <link href="../assets/css/loader.css" rel="stylesheet">
   <link href="../assets/css/dashboard.css" rel="stylesheet">
   <link href="../assets/css/food.css" rel="stylesheet">
+  <script src="../assets/js/logout.js"></script>
+  <script src="../assets/js/restaurant/dashboard.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,13 +34,16 @@
           <a class="nav-link active" aria-current="page" href="update_profile.html">Update Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sign Out</a>
+          <a class="nav-link active" aria-current="page" id="log_out" href="#">Sign Out</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <main class="container marge_bottom">
+  <div id="loading">
+    <img id="loading-image" src="../assets/img/Spinner.gif" alt="Loading..." />
+  </div>
   <div class="row container_line">
     <div class="col">
       <span class="number">1</span>
@@ -54,23 +60,33 @@
   </div>
   <br>
   <div>
-    <h2 class="pacifo">Finest Dining !</h2>
+    <h2 id="restaurant_name" class="pacifo">Loading... !</h2>
     <br><br>
     <div class="row">
       <div class="col-lg-5">
         <h3>Add New Food :</h3>
-        <label>Enter Food Name</label>
-        <input type="text" class="form-control" placeholder="Enter food name">
+        <form id="add_new_food_form" method="post" enctype="multipart/form-data">
+          <label>Enter Food Name</label>
+          <input id="add_food_name" name="food_name" type="text" class="form-control" placeholder="Enter food name">
+          <br>
+          <label>Enter Food Description</label>
+          <input id="add_food_desc" name="food_desc" type="text" class="form-control" placeholder="Enter food description">
+          <br>
+          <label>Food Type:</label>
+          <select name="food_pref" class="form-control">
+            <option value="1" selected>Pure Veg</option>
+            <option value="2">Non-Veg</option>
+          </select>
+          <br>
+          <label>Enter Price (Rs.)</label>
+          <input id="add_food_price" name="price" type="number" class="form-control" placeholder="Enter Price">
+          <br>
+          <label>Food Image:</label><br>
+          <input name="food_img" type="file" accept="image/*">
+        </form>
         <br>
-        <label>Enter Food Description</label>
-        <input type="text" class="form-control" placeholder="Enter food description">
+        <span id="add_food_error"></span>
         <br>
-        <label>Enter Price (Rs.)</label>
-        <input type="text" class="form-control" placeholder="Enter Price">
-        <br>
-        <label>Food Image:</label><br>
-        <input type="file" accept="image/*">
-        <br><br>
         <div class="text-center">
           <button type="button" class="btn" id="add_food_button">Add Item on Menu</button>
         </div>
@@ -78,15 +94,7 @@
       <div class="col-lg-7" id="some_space">
         <h3>Your Menu :</h3>
         <br>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span>&nbsp;&nbsp;₹ 200</span>
-          </div>
+        <div id="your_food_menu_box">
         </div>
         <br>
       </div>

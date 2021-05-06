@@ -12,8 +12,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <script src="./assets/js/jquery.js"></script>
   <link href="./assets/css/nav.css" rel="stylesheet">
+  <link href="assets/css/loader.css" rel="stylesheet">
   <link href="./assets/css/dashboard.css" rel="stylesheet">
   <link href="./assets/css/food.css" rel="stylesheet">
+  <script src="./assets/js/logout.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -32,13 +35,16 @@
           <a class="nav-link active" aria-current="page" href="update_profile.html">Update Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sign Out</a>
+          <a class="nav-link active" aria-current="page" id="log_out" href="#">Sign Out</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <main class="container marge_bottom">
+  <div id="loading">
+    <img id="loading-image" src="./assets/img/Spinner.gif" alt="Loading..." />
+  </div>
   <div class="row container_line">
     <div class="col theme_color">
       <span class="number">1</span>
@@ -61,30 +67,8 @@
     <span class="red_dot"></span><span class="green_dot"></span>&nbsp;&nbsp;Serve Both
     <br><br>
     <!-- Restaurant List -->
-    <div class="row">
-      <div class="margin_top col-md-6">
-        <div class="res_item_outer_box">
-          <a class="text_black" href="#">
-            <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-            <div class="item_inner_box">
-              <span class="green_dot float_right"></span>
-              <span class="red_dot float_right"></span>
-              <h5 class="food_item_bold_header pacifo">Fine Dining</h5>
-              <p class="item_description">Establish in 2009 one of the best dining , luxury experience which is love by customer</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="margin_top col-md-6">
-        <div class="res_item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <span class="green_dot float_right"></span>
-            <h5 class="food_item_bold_header pacifo">Fine Dining</h5>
-            <p class="item_description">Establish in 2009 one of the best dining , luxury experience which is love by customer</p>
-          </div>
-        </div>
-      </div>
+    <div id="res_taur_rant_list">
+      Loading....
     </div>
   </section>
 </main>

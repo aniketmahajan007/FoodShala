@@ -10,9 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="assets/css/index.css" rel="stylesheet">
     <link href="assets/css/nav.css" rel="stylesheet">
+    <link href="assets/css/loader.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/email_validation.js"></script>
     <script src="assets/js/index.js"></script>
 </head>
 <body>
@@ -36,6 +38,9 @@
         </div>
     </nav>
     <div class="row">
+        <div id="loading">
+            <img id="loading-image" src="./assets/img/Spinner.gif" alt="Loading..." />
+        </div>
         <div class="col" id="left_side_login">
             <img alt="food image" id="login_image" src="assets/img/login_page.jfif">
         </div>
@@ -47,11 +52,12 @@
                 <h3>Customer Login:</h3>
                 <br>
                 <label>Enter E-mail Address</label>
-                <input type="text" class="form-control" placeholder="Enter Email address">
+                <input id="login_email" type="text" class="form-control" placeholder="Enter Email address">
                 <br>
                 <label>Enter Password</label>
-                <input type="text" class="form-control" placeholder="Enter Password">
+                <input id="login_pass" type="text" class="form-control" placeholder="Enter Password">
                 <br>
+                <span id="login_error"></span>
                 <button class="btn" id="login_buttton_style">Login</button>
                 <a href="#" id="red_to_reg_box">Not Registered? Sign Up</a>
             </div>
@@ -59,22 +65,25 @@
             <div id="reg_box">
                 <h3>Customer Sign Up:</h3>
                 <br>
-                <label>Enter E-mail Address</label>
-                <input type="text" class="form-control" placeholder="Enter Email address">
+                <form id="reg_form" >
+                    <label>Enter E-mail Address</label>
+                    <input name="email" id="reg_email" type="text" class="form-control" placeholder="Enter Email address">
+                    <br>
+                    <label>Food Preference</label>
+                    <select name="food_pre" class="form-control">
+                        <option value="1" selected>Non-Veg</option>
+                        <option value="2">Veg</option>
+                        <option value="0">Both</option>
+                    </select>
+                    <br>
+                    <label>Enter Password</label>
+                    <input name="password" id="reg_pass" type="text" class="form-control" placeholder="Enter Password">
+                    <br>
+                    <label>Confirm Password</label>
+                    <input name="cpassword" id="reg_cpass" type="text" class="form-control" placeholder="Enter Confirm Password">
+                </form>
                 <br>
-                <label>Food Preference</label>
-                <select class="form-control">
-                    <option value="1">Non-Veg</option>
-                    <option value="2">Veg</option>
-                    <option value="0">Both</option>
-                </select>
-                <br>
-                <label>Enter Password</label>
-                <input type="text" class="form-control" placeholder="Enter Password">
-                <br>
-                <label>Confirm Password</label>
-                <input type="text" class="form-control" placeholder="Enter Password">
-                <br>
+                <span id="reg_error"></span>
                 <button class="btn" id="reg_buttton_style">Register</button>
                 <a href="#" id="red_to_login_box">Already Registered? Login</a>
             </div>
