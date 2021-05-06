@@ -14,6 +14,7 @@
   <link href="./assets/css/nav.css" rel="stylesheet">
   <link href="assets/css/loader.css" rel="stylesheet">
   <script src="./assets/js/logout.js"></script>
+  <script src="./assets/js/update_profile.js"></script>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -62,24 +63,26 @@
       <img id="loading-image" src="./assets/img/Spinner.gif" alt="Loading..." />
     </div>
     <div class="col-lg-6">
-      <label>Enter Name:</label>
-      <br>
-      <input type="text" class="form-control" placeholder="Enter Name">
-      <br>
-      <label>Enter Address</label>
-      <input type="text" class="form-control" placeholder="Enter Address">
-      <br>
-      <label>Food Preference</label>
-      <select class="form-control">
-        <option value="1">Non-Veg</option>
-        <option value="2">Veg</option>
-        <option value="0">Both</option>
-      </select>
-      <br>
-      <label>Contact Number</label>
-      <input type="text" class="form-control" placeholder="Enter contact number">
-      <br>
-
+      <form id="update_profile_form">
+        <label>Enter Name:</label>
+        <br>
+        <input name="user_name" id="user_name" type="text" class="form-control" placeholder="Enter Name">
+        <br>
+        <label>Enter Address</label>
+        <input name="user_address" id="address" type="text" class="form-control" placeholder="Enter Address">
+        <br>
+        <label>Food Preference</label>
+        <select name="food_pref" id="food_pref" class="form-control">
+          <option value="1">Non-Veg</option>
+          <option value="2">Veg</option>
+          <option value="0">Both</option>
+        </select>
+        <br>
+        <label>Contact Number</label>
+        <input maxlength="10" name="mob_number" id="mob_number" type="text" class="form-control" placeholder="Enter contact number">
+        <br>
+      </form>
+      <span id="update_profile_error"></span>
       <div class="text-center">
         <button type="button" class="btn" id="update_profile_button">Update Profile</button>
       </div>

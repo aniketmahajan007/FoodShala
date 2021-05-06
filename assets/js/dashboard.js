@@ -2,7 +2,7 @@ $(document).ready(()=>{
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
-        window.location.href="index.html";
+        window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
     $.ajax({
         url: "http://localhost/foodshala_php/controller/user.php?requesting=1",
@@ -13,11 +13,17 @@ $(document).ready(()=>{
         success: function(data)
         {
             $("#loading").hide();
-            console.log(data);
             //response handling
             if(data['status'] === 'restricted_token'){
                 alert('You are not allowed to access this page');
-                window.location.href="restaurant/dashboard.html";
+                window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";
+                return;
+            }else if(data['status'] === "db"){
+                alert('Database Connection failed');
+                return;
+            }else if(data['status'] ==="token_exist" || data['status']==="invalid_token"){
+                alert('Token Expire');
+                window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
                 return;
             }else if(data['status'] === "error"){
                 alert("Unknown error occurred, please try again later");

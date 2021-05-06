@@ -67,82 +67,31 @@
     <div class="row">
       <div class="col-lg-4">
         <h3>Summary :</h3>
-        <!--<p style="color:red;font-size: 1.2em"><br>No food selected yet ....</p>-->
-        <div id="orders_list" style="font-size: 1.1em">
-          <br>
-          <div class="row">
-            <div class="col-md-4">
-              <span style="font-weight: 600">1x Burger Fries:</span>
+        <div id="order_summary_box">
+          <p style="color:red;font-size: 1.2em" id="no_food_selected_yet"><br>No food selected yet ....</p>
+          <div id="orders_list" style="font-size: 1.1em;display: none">
+            <br>
+            <div id="order_list_nested_items">
             </div>
-            <div class="col-md-4">
-              <span>280 Rs.</span>
+            <div>
+              <br>
+              <span style="font-size: 1.1em">Total Amount :<span id="order_total_value" style="font-weight: 600;margin-left: 2em">0</span></span>
             </div>
+            <br>
+            <button class="btn" id="order_confirm_button">Confirm Order</button>
           </div>
+          <form style="display: none">
+            <input type="number" name="tot_items" id="order_tot_items" value="0">
+            <input type="number" name="rest_id" id="order_rest_id">
+          </form>
         </div>
       </div>
       <!-- Food Menu -->
       <div class="col-lg-8 mob_margin_top">
         <h3>Menu :</h3>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span class="menu_price_fix_style">&nbsp;&nbsp;₹ 200</span><br class="br_display_none">
-            <button class="btn add_item_button">Add</button>
-          </div>
+        <div id="res_menu_full_box">
+          Loading...
         </div>
-        <br>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span class="menu_price_fix_style">&nbsp;&nbsp;₹ 200</span><br class="br_display_none">
-            <button class="btn add_item_button">Add</button>
-          </div>
-        </div>
-        <br>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span class="menu_price_fix_style">&nbsp;&nbsp;₹ 200</span><br class="br_display_none">
-            <button class="btn add_item_button">Add</button>
-          </div>
-        </div>
-        <br>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span class="menu_price_fix_style">&nbsp;&nbsp;₹ 200</span><br class="br_display_none">
-            <button class="btn add_item_button">Add</button>
-          </div>
-        </div>
-        <br>
-        <div class="item_outer_box">
-          <img class="food_item_img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*">
-          <div class="item_inner_box">
-            <h5 class="food_item_bold_header">Burger & Fries <span class="dot"></span></h5>
-            <p class="item_description">DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat DEscript its is great and salaty one of ,y fav thimgs to eat </p>
-          </div>
-          <div class="res_price">
-            <span class="menu_price_fix_style">&nbsp;&nbsp;₹ 200</span><br class="br_display_none">
-            <button class="btn add_item_button">Add</button>
-          </div>
-        </div>
-        <br>
       </div>
     </div>
   </section>

@@ -17,7 +17,7 @@
     height: 3em;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 90%;
 }
 #add_food_button{
     background-color: #e74c3c;
@@ -27,6 +27,11 @@
 .res_price{
     margin-top: -3.4em;
     font-size: 1.6em;
+}
+#order_confirm_button{
+    background-color: #e74c3c;
+    color: white;
+    width: 260px;
 }
 .add_item_button{
     font-size: 0.6em;

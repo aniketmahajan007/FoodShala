@@ -20,7 +20,7 @@ $(document).ready(()=>{
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){}
-    else{window.location.href="dashboard.html";}
+    else{window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";}
     //login validation
     $("#login_buttton_style").click(()=>{
         $("#loading").show();
@@ -46,14 +46,13 @@ $(document).ready(()=>{
             success: function(data)
             {
                 $("#loading").hide();
-                console.log(data);
                 //response handling for login
                 if(data['status']==="wmail_fail" || data['status'] === "pass_fail" || data['status']=== "invalid"){
                     $("#login_error").html('<span style="color:red">Email or Password not valid<br><br></span>');
                 }else if(data[0].status==="success"){
                     document.cookie = 'login_cookies='+data[0].token;
                     setTimeout(()=>{
-                        window.location.href = "dashboard.html";
+                        window.location.href = "https://aniketmahajan007.github.io/FoodShala/dashboard.html";
                     },500)
                 }else{
                     alert('Unknown error occurred try again later.');

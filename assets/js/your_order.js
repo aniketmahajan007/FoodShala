@@ -5,7 +5,7 @@ $(document).ready(()=>{
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/restaurant.php?requesting=2",
+        url: "http://localhost/foodshala_php/controller/user.php?requesting=4",
         headers: { 'FOODSHALA' : cookie_token},
         crossDomain: true,
         timeout:30000,
@@ -16,17 +16,6 @@ $(document).ready(()=>{
             //response handling
             if(data['status'] === 'restricted_token'){
                 alert('You are not allowed to access this page');
-                window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";
-                return;
-            }else if(data['status'] === "db"){
-                alert('Database Connection failed');
-                return;
-            }else if(data['status'] ==="token_exist" || data['status']==="invalid_token"){
-                alert('Token Expire');
-                window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
-                return;
-            }else if(data['status'] === 'restricted_token'){
-                alert('You are not allowed to access this page');
                 window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
                 return;
             }else if(data['status'] === "error"){
@@ -34,7 +23,7 @@ $(document).ready(()=>{
             }else{
                 let innerHTML = '';
                 data.forEach((value)=>{
-                    innerHTML+=`<div class="margin_top col">
+innerHTML+=`<div class="margin_top col">
             <div class="order_outer_box">
                 <img class="order_img_logo" src="http://localhost/foodshala_php/res_logo/${value.logo}">
                 <div class="order_inner_box">
@@ -61,4 +50,3 @@ $(document).ready(()=>{
         }
     });
 })
-

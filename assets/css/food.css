@@ -25,6 +25,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 80%;
 }
 .res_item_outer_box{
     border: 1px solid lightgray;padding: 0.4em;width: 570px;height: 110px
