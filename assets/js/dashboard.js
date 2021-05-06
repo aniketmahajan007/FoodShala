@@ -22,7 +22,9 @@ $(document).ready(()=>{
                 alert('Database Connection failed');
                 return;
             }else if(data['status'] ==="token_exist" || data['status']==="invalid_token"){
-                window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
+                setTimeout(()=>{
+                    window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
+                },500);
                 return;
             }else if(data['status'] === "error"){
                 alert("Unknown error occurred, please try again later");
@@ -32,6 +34,12 @@ $(document).ready(()=>{
                 data.forEach((value)=>{
                     if(i%2 === 0){
                         innerHTML+=`<div class="row">`;
+                    }
+                    if(value.logo === null || value.logo === ""){
+                        value.logo='chef.jpg';
+                    }
+                    if(value.res_desc === null || value.res_desc === ""){
+                        value.res_desc='Serving delicious food at your doorstep.';
                     }
                     innerHTML+=`<div class="margin_top col-md-6">
           <div class="res_item_outer_box">

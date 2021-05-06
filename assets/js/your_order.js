@@ -23,6 +23,12 @@ $(document).ready(()=>{
             }else{
                 let innerHTML = '';
                 data.forEach((value)=>{
+                    if(value.logo === null || value.logo === ""){
+                        value.logo='chef.jpg';
+                    }
+                    if(value.res_desc === null || value.res_desc === ""){
+                        value.res_desc='Serving delicious food at your doorstep.';
+                    }
 innerHTML+=`<div class="margin_top col">
             <div class="order_outer_box">
                 <img class="order_img_logo" src="http://localhost/foodshala_php/res_logo/${value.logo}">

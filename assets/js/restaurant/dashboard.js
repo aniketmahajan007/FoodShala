@@ -22,8 +22,9 @@ $(document).ready(()=>{
                 alert('Database Connection failed');
                 return;
             }else if(data['status'] ==="token_exist" || data['status']==="invalid_token"){
-                alert('Token Expire');
-                window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";
+                setTimeout(()=>{
+                    window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
+                },500);
                 return;
             }else if(data['status'] === "error"){
                 alert("Unknown error occurred, please try again later");
