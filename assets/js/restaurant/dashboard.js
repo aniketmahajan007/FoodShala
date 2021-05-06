@@ -23,7 +23,7 @@ $(document).ready(()=>{
                 return;
             }else if(data['status'] ==="token_exist" || data['status']==="invalid_token"){
                 setTimeout(()=>{
-                    window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
+                    window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";
                 },500);
                 return;
             }else if(data['status'] === "error"){
