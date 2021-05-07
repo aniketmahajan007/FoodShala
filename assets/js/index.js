@@ -7,6 +7,7 @@ $(document).ready(()=>{
         document.getElementById("left_side_login").style.display = "block";
         $("#right_side_login").removeClass("col-md-12").addClass("col-md-6")
     }
+    // Toggle code between Register and Login
     $("#reg_box").hide();
     $("#red_to_reg_box").click(()=>{
         $("#reg_box").show();
@@ -16,7 +17,7 @@ $(document).ready(()=>{
         $("#reg_box").hide();
         $("#login_box").show();
     })
-    // Checking Token For login
+    // Checking Token For login if found redirect to user page
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){}
@@ -24,6 +25,7 @@ $(document).ready(()=>{
     //login validation
     $("#login_buttton_style").click(()=>{
         $("#loading").show();
+        // Validation
        let email = $("#login_email").val().trim();
        let pass = $("#login_pass").val().trim();
        if(!isEmail(email)){
@@ -36,6 +38,7 @@ $(document).ready(()=>{
            $("#login_error").html('<span style="color:red">Email or Password not valid<br><br></span>');
            return;
        }
+       // Checking details with server
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=3",
             headers: { 'FOODSHALA' : 'null'},
@@ -63,8 +66,10 @@ $(document).ready(()=>{
             }
         });
     });
+    // register validation
     $("#reg_buttton_style").click(()=>{
         $("#loading").show();
+        // Validating
         let email = $("#reg_email").val().trim();
         let pass = $("#reg_pass").val().trim();
         let cpass = $("#reg_cpass").val().trim();
@@ -84,6 +89,7 @@ $(document).ready(()=>{
             return;
         }
         let form_data = new FormData($('#reg_form')[0]);
+        // Sending to details
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=1",
             headers: { 'FOODSHALA' : 'null'},
@@ -96,6 +102,7 @@ $(document).ready(()=>{
             success: function(data)
             {
                 $("#loading").hide();
+                // Handling Response
                 if(data['status'] === "success"){
                     alert('Account Successfully created try login now');
                     $("#red_to_login_box").click();

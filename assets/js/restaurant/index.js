@@ -16,6 +16,7 @@ $(document).ready(()=>{
         $("#reg_box").hide();
         $("#login_box").show();
     });
+    // Checking Restaurant is not login
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){}
@@ -24,6 +25,7 @@ $(document).ready(()=>{
     //login validation
     $("#login_buttton_style").click(()=>{
         $("#loading").show();
+        // Validation
         let email = $("#login_email").val().trim();
         let pass = $("#login_pass").val().trim();
         if(!isEmail(email)){
@@ -36,6 +38,7 @@ $(document).ready(()=>{
             $("#login_error").html('<span style="color:red">Email or Password not valid<br><br></span>');
             return;
         }
+        // Sending login request
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=4",
             headers: { 'FOODSHALA' : 'null'},
@@ -63,9 +66,10 @@ $(document).ready(()=>{
             }
         });
     });
-
+    // Registration
     $("#reg_buttton_style").click(()=>{
         $("#loading").show();
+        // Validating
         let email = $("#reg_email").val().trim();
         let pass = $("#reg_pass").val().trim();
         let cpass = $("#reg_cpass").val().trim();
@@ -94,6 +98,7 @@ $(document).ready(()=>{
             return;
         }
         let form_data = new FormData($('#res_reg_form')[0]);
+        // Sending Registration request
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=2",
             headers: { 'FOODSHALA' : 'null'},
@@ -106,6 +111,7 @@ $(document).ready(()=>{
             success: function(data)
             {
                 $("#loading").hide();
+                // handling response
                 if(data['status'] === "success"){
                     alert('Account Successfully created try login now');
                     $("#red_to_login_box").click();

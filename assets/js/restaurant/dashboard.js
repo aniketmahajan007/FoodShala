@@ -1,9 +1,11 @@
 $(document).ready(()=>{
+    // Checking Token
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
         window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/index.html";
     }
+    // Fetching Menu of login restaurant
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/restaurant.php?requesting=1",
         headers: { 'FOODSHALA' : cookie_token},
@@ -59,6 +61,7 @@ $(document).ready(()=>{
             $("#loading").hide();
         }
     });
+    // Add Food to menu
     $("#add_food_button").click(()=>{
         let food_name = $("#add_food_name").val().trim();
         let food_desc = $("#add_food_desc").val().trim();
@@ -72,6 +75,7 @@ $(document).ready(()=>{
             return;
         }
         $("#loading").show();
+        // Sending request to add food
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/restaurant.php?requesting=3",
             headers: { 'FOODSHALA' : cookie_token},

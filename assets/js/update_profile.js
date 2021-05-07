@@ -1,9 +1,11 @@
 $(document).ready(()=>{
+    // checking token
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
+    // Fetching User Data
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=6",
         headers: { 'FOODSHALA' : cookie_token},
@@ -38,6 +40,7 @@ $(document).ready(()=>{
             $("#loading").hide();
         }
     });
+    //Updating User Data
     $("#update_profile_button").click(()=>{
         let user_name = $("#user_name").val().trim();
         let address = $("#address").val().trim();
@@ -51,6 +54,7 @@ $(document).ready(()=>{
             return;
         }
         $("#loading").show();
+        // Sending update request
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=5",
             headers: { 'FOODSHALA' : cookie_token},
@@ -63,6 +67,7 @@ $(document).ready(()=>{
             success: function(data)
             {
                 $("#loading").hide();
+                // handling response
                 if(data['status'] === 'restricted_token'){
                     alert('You are not allowed to access this page');
                     window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";

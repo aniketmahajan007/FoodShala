@@ -1,9 +1,11 @@
 $(document).ready(()=>{
+    // Checking token
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
+    // Fetching order history of restaurant
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/restaurant.php?requesting=2",
         headers: { 'FOODSHALA' : cookie_token},

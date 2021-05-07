@@ -1,9 +1,12 @@
 $(document).ready(()=>{
+    // Checking token
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
+    // if token not found redirect to login since its restricted page
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
+    // Display All Restaurant
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=1",
         headers: { 'FOODSHALA' : cookie_token},

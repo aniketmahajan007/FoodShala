@@ -3,6 +3,7 @@ $(document).ready(()=>{
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){}
     else{window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";}
+    // Fetching All Foods
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=5",
         headers: { 'FOODSHALA' : 'null'},

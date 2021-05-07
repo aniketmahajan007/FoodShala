@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+    // Checking token
     let elements = document.cookie.split('login_cookies=');
     let cookie_token= elements[1];
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){
@@ -10,11 +11,13 @@ $(document).ready(()=>{
     setTimeout(()=>{
         $("#order_rest_id").val(res_id);
     },2000);
+    // Checking Res ID
     if(res_id < 1){
         alert('Unknown error occurred');
         window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";
         return;
     }
+    // Fetching Restaurant Menu
     $.ajax({
         url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=2",
         headers: { 'FOODSHALA' : cookie_token},
@@ -72,6 +75,7 @@ $(document).ready(()=>{
             $("#loading").hide();
         }
     });
+    // Cart Functionality
     $(document).on('click','.add_item_button',function (){
         let food_id = $(this).attr('data-foodid');
         let foodname = $("#food_box_id"+food_id).find('.food_item_bold_header:first').text();
@@ -94,8 +98,9 @@ $(document).ready(()=>{
 </div>`);
         $("#order_total_value").text(tot);
     });
-
+    // confirm order Event
     $("#order_confirm_button").click(()=>{
+        // Validating
         let tot = Number($("#order_tot_items").val());
         let rest_id = Number($("#order_rest_id").val());
         if( tot < 1 || rest_id < 1){
@@ -103,6 +108,7 @@ $(document).ready(()=>{
             return;
         }
         $("#loading").show();
+        // Sending Request to server
         $.ajax({
             url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=3",
             headers: { 'FOODSHALA' : cookie_token},
@@ -113,7 +119,7 @@ $(document).ready(()=>{
             success: function(data)
             {
                 $("#loading").hide();
-                //response handling for login
+                //response handling
                 if(data['status'] === 'restricted_token'){
                     alert('You are not allowed to access this page');
                     window.location.href="https://aniketmahajan007.github.io/FoodShala/restaurant/dashboard.html";

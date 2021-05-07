@@ -1,5 +1,6 @@
 $(document).ready(()=>{
     $("#log_out").click(()=>{
+        // Deleting Token and redirecting to login page
         document.cookie = 'login_cookies=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;';
         document.cookie = 'login_cookies=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/FoodShala;';
         document.cookie = 'login_cookies=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/FoodShala/restaurant;';
