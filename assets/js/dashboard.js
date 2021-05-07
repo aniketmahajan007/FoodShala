@@ -5,7 +5,7 @@ $(document).ready(()=>{
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/user.php?requesting=1",
+        url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=1",
         headers: { 'FOODSHALA' : cookie_token},
         crossDomain: true,
         timeout:30000,
@@ -44,7 +44,7 @@ $(document).ready(()=>{
                     innerHTML+=`<div class="margin_top col-md-6">
           <div class="res_item_outer_box">
             <a class="text_black" href="menu.html?res=${value.res_id}">
-              <img class="food_item_img" src="http://localhost/foodshala_php/res_logo/${value.logo}">
+              <img class="food_item_img" src="https://foodyshala.herokuapp.com/res_logo/${value.logo}">
               <div class="item_inner_box">`;
                     if(value.food_pref == 0){
                         innerHTML+=`<span class="green_dot float_right"></span><span class="red_dot float_right"></span>`;

@@ -16,7 +16,7 @@ $(document).ready(()=>{
         return;
     }
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/user.php?requesting=2",
+        url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=2",
         headers: { 'FOODSHALA' : cookie_token},
         crossDomain: true,
         data: {rest_id:res_id},
@@ -47,7 +47,7 @@ $(document).ready(()=>{
                 let innerHTML = '';
                 data.forEach((value)=>{
                     innerHTML+=`<div class="margin_top item_outer_box">
-          <img class="food_item_img" src="http://localhost/foodshala_php/food_img/${value.food_img}">
+          <img class="food_item_img" src="https://foodyshala.herokuapp.com/food_img/${value.food_img}">
           <div class="item_inner_box" id="food_box_id${value.id}">
             <h5 class="food_item_bold_header">${value.name}`;
                 if(value.food_pref == 1){
@@ -104,7 +104,7 @@ $(document).ready(()=>{
         }
         $("#loading").show();
         $.ajax({
-            url: "http://localhost/foodshala_php/controller/user.php?requesting=3",
+            url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=3",
             headers: { 'FOODSHALA' : cookie_token},
             data: {rest_id:rest_id,tot_items:tot,item_list:array_list},
             crossDomain: true,

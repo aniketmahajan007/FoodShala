@@ -5,7 +5,7 @@ $(document).ready(()=>{
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/restaurant.php?requesting=2",
+        url: "https://foodyshala.herokuapp.com/controller/restaurant.php?requesting=2",
         headers: { 'FOODSHALA' : cookie_token},
         crossDomain: true,
         timeout:30000,
@@ -42,7 +42,7 @@ $(document).ready(()=>{
                     }
                     innerHTML+=`<div class="margin_top col">
             <div class="order_outer_box">
-                <img class="order_img_logo" src="http://localhost/foodshala_php/res_logo/${value.logo}">
+                <img class="order_img_logo" src="https://foodyshala.herokuapp.com/res_logo/${value.logo}">
                 <div class="order_inner_box">
                     <h4 class="order_res_name">${value.res_name}</h4>
                     <p class="order_res_detail">${value.res_desc}</p>

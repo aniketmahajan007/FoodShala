@@ -5,7 +5,7 @@ $(document).ready(()=>{
         window.location.href="https://aniketmahajan007.github.io/FoodShala/index.html";
     }
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/user.php?requesting=6",
+        url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=6",
         headers: { 'FOODSHALA' : cookie_token},
         crossDomain: true,
         timeout:30000,
@@ -52,7 +52,7 @@ $(document).ready(()=>{
         }
         $("#loading").show();
         $.ajax({
-            url: "http://localhost/foodshala_php/controller/user.php?requesting=5",
+            url: "https://foodyshala.herokuapp.com/controller/user.php?requesting=5",
             headers: { 'FOODSHALA' : cookie_token},
             data: new FormData($("#update_profile_form")[0]),
             crossDomain: true,

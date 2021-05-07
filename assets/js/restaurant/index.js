@@ -37,7 +37,7 @@ $(document).ready(()=>{
             return;
         }
         $.ajax({
-            url: "http://localhost/foodshala_php/controller/register.php?requesting=4",
+            url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=4",
             headers: { 'FOODSHALA' : 'null'},
             data: {email:email,password:pass},
             crossDomain: true,
@@ -95,7 +95,7 @@ $(document).ready(()=>{
         }
         let form_data = new FormData($('#res_reg_form')[0]);
         $.ajax({
-            url: "http://localhost/foodshala_php/controller/register.php?requesting=2",
+            url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=2",
             headers: { 'FOODSHALA' : 'null'},
             data: form_data,
             crossDomain: true,

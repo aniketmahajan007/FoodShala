@@ -4,7 +4,7 @@ $(document).ready(()=>{
     if(cookie_token === undefined || cookie_token === null || cookie_token.length<10){}
     else{window.location.href="https://aniketmahajan007.github.io/FoodShala/dashboard.html";}
     $.ajax({
-        url: "http://localhost/foodshala_php/controller/register.php?requesting=5",
+        url: "https://foodyshala.herokuapp.com/controller/register.php?requesting=5",
         headers: { 'FOODSHALA' : 'null'},
         crossDomain: true,
         timeout:30000,
@@ -29,7 +29,7 @@ $(document).ready(()=>{
                     }
                     innerHTML+=`<div class="margin_top col-md-4">
                 <div class="food_menu_outer_box">
-                    <img class="food_menu_img_food" src="http://localhost/foodshala_php/food_img/${value.food_img}">
+                    <img class="food_menu_img_food" src="https://foodyshala.herokuapp.com/food_img/${value.food_img}">
                     <div class="food_menu_inner_box">
                         <h3 class="food_menu_item_name">${value.food_name}</h3>
                         <p class="food_menu_item_desc">${value.food_desc}</p>
@@ -39,7 +39,7 @@ $(document).ready(()=>{
                         </div>
                     </div>
                     <div class="food_menu_company_box">
-                        <img class="food_menu_logo_food" alt="Restaurant logo" src="http://localhost/foodshala_php/res_logo/${value.logo}">
+                        <img class="food_menu_logo_food" alt="Restaurant logo" src="https://foodyshala.herokuapp.com/res_logo/${value.logo}">
                         <div class="food_menu_res_detail">
                             <h5 class="food_menu_restaurant_name">${value.res_name}</h5>
                             <p class="food_menu_restaurant_detail">${value.res_desc}</p>
